@@ -17,6 +17,7 @@ public class NewWindow {
     private static double r = 50;
 
     static int count1 = 0;
+
     static int count2 = 0;
 
     public static void display() {
@@ -25,36 +26,30 @@ public class NewWindow {
 
         HBox root = new HBox();
 
-
-
         window.initModality(Modality.APPLICATION_MODAL);
 
-        window.setTitle("Sharpshooter");
+        window.setTitle("SharpShooter");
 
+        //Number of clicks on the circle button
         Label circle = new Label();
 
         circle.setText("Clicks on circle: 0");
 
-        circle.setMaxHeight(25);
 
-        circle.setMaxWidth(25);
 
-        circle.setScaleX(25);
-
-        circle.setScaleY(25);
-
+        //Number of clicks on the square button
         Label square = new Label();
 
         square.setText("Clicks on square: 0");
 
-        square.setMaxHeight(25);
 
-        square.setMaxWidth(25);
+        //Label and button for next window
+        Label message = new Label("Whenever you want to see how many clicks you did on both buttons");
 
-        square.setScaleX(25);
+        Button Nextbutton = new Button("View Score");
 
-        square.setScaleY(25);
-
+        //Action when the button is clicked
+        Nextbutton.setOnAction(e-> EndWindow.display());
 
         //Round Button
         Button roundbutton = new Button("Circle");
@@ -91,12 +86,14 @@ public class NewWindow {
         });
 
 
-        root.getChildren().addAll(circle, square,roundbutton,squarebutton);
+
+        root.getChildren().addAll(squarebutton,roundbutton,Nextbutton,message);
 
         root.setAlignment(Pos.CENTER);
+
         root.setSpacing(30);
 
-        Scene scene = new Scene(root, 500,500);
+        Scene scene = new Scene(root, 1000,500);
 
         window.setScene(scene);
 
