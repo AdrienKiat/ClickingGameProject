@@ -26,7 +26,7 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) {
 
         //Set stage title
-        primaryStage.setTitle("My reaction game");
+        primaryStage.setTitle("Clicking Game");
 
         //Create Label and Button
         Label messageLabel = new Label("SharpShooter");
@@ -50,7 +50,7 @@ public class HelloApplication extends Application {
         //Set Margins
         vbox.setMargin(label, new Insets(100,50 , 20, 50));
 
-        Scene scene =  new Scene(vbox, 500, 500);
+        Scene scene =  new Scene(vbox, 1000, 500);
 
         primaryStage.setScene(scene);
 
