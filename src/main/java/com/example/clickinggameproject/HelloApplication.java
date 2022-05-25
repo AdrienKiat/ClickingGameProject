@@ -9,7 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
-
+import org.kordamp.bootstrapfx.BootstrapFX;
+import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 public class HelloApplication extends Application {
 
@@ -26,14 +27,20 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) {
 
         //Set stage title
-        primaryStage.setTitle("Clicking Game");
+        primaryStage.setTitle(" My Clicking Game");
 
         //Create Label and Button
-        Label messageLabel = new Label("SharpShooter");
+        Panel messageLanel = new Panel("Shxpes-Clixker");
 
-        label = new Label("Click to start the game. ");
+        messageLanel.getStyleClass().add("panel-danger");
 
-        button = new Button("Click here");
+        label = new Label("Click the button to start the game.");
+
+        label.getStyleClass().add("lbl-danger");
+
+        button = new Button("Here!");
+
+        button.getStyleClass().setAll("btn", "btn-lg", "btn-danger");
 
         //Action happening when a button is clicked(Open a new window)
         button.setOnAction(e -> NewWindow.display());
@@ -43,7 +50,7 @@ public class HelloApplication extends Application {
 
         layout.getChildren().add(button);
 
-        VBox vbox = new VBox(messageLabel,label, button, layout);
+        VBox vbox = new VBox(messageLanel,label, button, layout);
 
         vbox.setAlignment(Pos.CENTER);
 
@@ -51,6 +58,8 @@ public class HelloApplication extends Application {
         vbox.setMargin(label, new Insets(100,50 , 20, 50));
 
         Scene scene =  new Scene(vbox, 1000, 500);
+
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
 
         primaryStage.setScene(scene);
 
