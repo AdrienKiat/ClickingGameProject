@@ -5,7 +5,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -24,32 +24,11 @@ public class NewWindow {
 
         Stage window = new Stage();
 
-        HBox root = new HBox();
+        VBox root = new VBox();
 
         window.initModality(Modality.APPLICATION_MODAL);
 
-        window.setTitle("SharpShooter");
-
-        //Number of clicks on the circle button
-        Label circle = new Label();
-
-        circle.setText("Clicks on circle: 0");
-
-
-
-        //Number of clicks on the square button
-        Label square = new Label();
-
-        square.setText("Clicks on square: 0");
-
-
-        //Label and button for next window
-        Label message = new Label("Whenever you want to see how many clicks you did on both buttons");
-
-        Button Nextbutton = new Button("View Score");
-
-        //Action when the button is clicked
-        Nextbutton.setOnAction(e-> EndWindow.display());
+        window.setTitle("Shxpes-Clixker");
 
         //Round Button
         Button roundbutton = new Button("Circle");
@@ -60,7 +39,10 @@ public class NewWindow {
 
         roundbutton.setMaxSize(2*r, 2*r);
 
+        //Number of clicks on the circle button
+        Label circle = new Label();
 
+        circle.setText("Clicks on circle: 0");
 
         roundbutton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -77,6 +59,11 @@ public class NewWindow {
 
         squarebutton.setMaxSize(100,100);
 
+        //Number of clicks on the square button
+        Label square = new Label();
+
+        square.setText("Clicks on square: 0");
+
         squarebutton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -86,8 +73,15 @@ public class NewWindow {
         });
 
 
+        //Label and button for next window
+        Button Nextbutton = new Button("View Score");
 
-        root.getChildren().addAll(squarebutton,roundbutton,Nextbutton,message);
+        //Action when the button is clicked
+        Nextbutton.setOnAction(e-> EndWindow.display());
+
+        Label message = new Label("Click the button to see your results");
+
+        root.getChildren().addAll(squarebutton,square,roundbutton,circle,message,Nextbutton);
 
         root.setAlignment(Pos.CENTER);
 
@@ -99,4 +93,6 @@ public class NewWindow {
 
         window.showAndWait();
     }
+
+
 }
