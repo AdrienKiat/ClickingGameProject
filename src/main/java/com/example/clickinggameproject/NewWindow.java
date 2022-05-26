@@ -1,5 +1,6 @@
 package com.example.clickinggameproject;
 
+//Imports
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -10,6 +11,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import org.kordamp.bootstrapfx.BootstrapFX;
 
 public class NewWindow {
 
@@ -22,6 +24,7 @@ public class NewWindow {
 
     public static void display() {
 
+        //VBox and Stage Title
         Stage window = new Stage();
 
         VBox root = new VBox();
@@ -39,10 +42,11 @@ public class NewWindow {
 
         roundbutton.setMaxSize(2*r, 2*r);
 
-        //Number of clicks on the circle button
-        Label circle = new Label();
+        //BootstrapFX
+        roundbutton.getStyleClass().setAll("btn", "btn-lg", "btn-danger");
 
-        circle.setText("Clicks on circle: 0");
+        //Count the number of clicks on the circle button
+        Label circle = new Label();
 
         roundbutton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -52,6 +56,7 @@ public class NewWindow {
             }
         });
 
+
         //Square Button
         Button squarebutton = new Button("Square");
 
@@ -59,35 +64,43 @@ public class NewWindow {
 
         squarebutton.setMaxSize(100,100);
 
-        //Number of clicks on the square button
-        Label square = new Label();
+        //BootstrapFX
+        squarebutton.getStyleClass().setAll("btn", "btn-lg", "btn-danger");
 
-        square.setText("Clicks on square: 0");
+        //Count the number of clicks on the square button
+        Label square = new Label();
 
         squarebutton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 count2++;
                 square.setText(Integer.toString(count2));
+
             }
         });
 
 
-        //Label and button for next window
+        //Label and button
         Button Nextbutton = new Button("View Score");
 
-        //Action when the button is clicked
+        //BootstrapFX
+        Nextbutton.getStyleClass().setAll("btn", "btn-lg", "btn-danger");
+
+        //Action when the button is clicked (Open the last window)
         Nextbutton.setOnAction(e-> EndWindow.display());
 
         Label message = new Label("Click the button to see your results");
 
-        root.getChildren().addAll(squarebutton,square,roundbutton,circle,message,Nextbutton);
+        //Displaying on the window
+        root.getChildren().addAll(squarebutton,roundbutton,message,Nextbutton);
 
         root.setAlignment(Pos.CENTER);
 
         root.setSpacing(30);
 
         Scene scene = new Scene(root, 1000,500);
+
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
 
         window.setScene(scene);
 
