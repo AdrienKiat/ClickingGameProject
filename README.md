@@ -1,5 +1,5 @@
 # ClickingGame
-                              Shxpes-Clixker
+                                           Shxpes-Clixker
 
 ## Project Description
 ##
@@ -18,7 +18,7 @@ One of many challenges that I faced during the realization was to connect many d
 I used JavaFX in my entire project. Firstly, labels and buttons were in a VBox, so it would be display one on top of each other. Each buttons were ".setOnAction" and "EventHandlers", so when the buttons were pressed, something would happened, an action would occurred, such as switching windows or counting the number of clicks for each buttons. Each class was refered to a window, so it was easier for a button to refer to them. The results were in the last window, to view them, you had to click to the button where the game was displayed. You could restart the game by pressing a button in the last window referring to the previous one, so it would not be necessary to close and open the application over and over.
 ##
 ### UML and Screenshots
-<img width="328" alt="Wireframe" src="https://user-images.githubusercontent.com/105833776/170409301-06641316-61ef-42c0-8d72-57b367030592.png">
+<img width="302" alt="UML Diagram" src="https://user-images.githubusercontent.com/105833776/170409873-d9dffcc3-7ab3-450f-84c5-42f99ba44bf9.png">
 <img width="745" alt="Main Window" src="https://user-images.githubusercontent.com/105833776/170409618-e90c530c-a89e-4b08-b051-8ab0d24e8303.png">
 <img width="748" alt="Game" src="https://user-images.githubusercontent.com/105833776/170409635-a1c0d16a-fccf-4e7d-a6f0-60b502ee07b9.png">
 <img width="746" alt="Result Window" src="https://user-images.githubusercontent.com/105833776/170409646-0d7e69e5-d614-4c5d-86ee-e3ecbc2c5097.png">
