@@ -1,5 +1,6 @@
 package com.example.clickinggameproject;
 
+//Imports
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.layout.StackPane;
@@ -32,17 +33,17 @@ public class HelloApplication extends Application {
         //Create Label and Button
         Panel messageLanel = new Panel("Shxpes-Clixker");
 
+        //BootstrapFX
         messageLanel.getStyleClass().add("panel-danger");
 
         label = new Label("Click the button to start the game.");
 
-        label.getStyleClass().add("lbl-danger");
-
         button = new Button("Here!");
 
+        //BootstrapFX
         button.getStyleClass().setAll("btn", "btn-lg", "btn-danger");
 
-        //Action happening when a button is clicked(Open a new window)
+        //Action happening when a button is clicked (Open a new window)
         button.setOnAction(e -> NewWindow.display());
 
         //Create VBox
