@@ -1,5 +1,5 @@
 # ClickingGame
-                                                             Shxpes-Clixker
+                              Shxpes-Clixker
 
 ## Project Description
 ##
